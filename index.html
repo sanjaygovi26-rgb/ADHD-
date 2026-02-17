@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Hey Big Bro... Listen Up 😏</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      min-height: 100vh;
+      min-height: 100dvh;          /* modern full viewport height */
+      height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -27,83 +32,87 @@
 
     .floating-heart {
       position: absolute;
-      color: rgba(255, 105, 180, 0.2);
-      animation: floatHeart 5s ease-in-out infinite;
+      color: rgba(255, 105, 180, 0.25);
+      animation: floatHeart 6s ease-in-out infinite;
     }
 
     @keyframes floatHeart {
       0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
-      50% { transform: translateY(-40px) rotate(12deg); opacity: 0.85; }
+      50%      { transform: translateY(-50px) rotate(10deg); opacity: 0.8; }
     }
 
     .card {
       position: relative;
       z-index: 1;
-      max-width: 500px;
-      width: 92%;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      width: 94%;
+      max-width: 520px;
+      min-height: 70dvh;
+      max-height: 94dvh;
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.55);
       border-radius: 28px;
-      padding: 50px 38px;
+      padding: clamp(28px, 7vw, 44px) clamp(20px, 5vw, 36px);
       text-align: center;
-      box-shadow:
-        0 10px 40px rgba(255, 105, 180, 0.15),
-        0 0 70px rgba(255, 182, 193, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      box-shadow: 
+        0 12px 44px rgba(255, 105, 180, 0.18),
+        0 0 80px rgba(255, 182, 193, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
       animation: fadeInUp 0.9s ease-out;
+      overflow-y: auto;
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .big-emoji {
-      font-size: 72px;
-      margin-bottom: 20px;
-      animation: shake 2.2s infinite ease-in-out;
+      font-size: clamp(60px, 18vw, 90px);
+      margin: 0 0 16px 0;
+      animation: shake 2.4s infinite ease-in-out;
     }
 
     @keyframes shake {
       0%, 100% { transform: rotate(0deg); }
-      20% { transform: rotate(-6deg); }
-      40% { transform: rotate(6deg); }
-      60% { transform: rotate(-4deg); }
-      80% { transform: rotate(4deg); }
+      20%      { transform: rotate(-7deg); }
+      40%      { transform: rotate(7deg); }
+      60%      { transform: rotate(-5deg); }
+      80%      { transform: rotate(5deg); }
     }
 
     .title {
       font-family: 'Dancing Script', cursive;
-      font-size: 52px;
+      font-size: clamp(44px, 11vw, 64px);
       font-weight: 700;
       color: #c71585;
-      text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
-      margin-bottom: 10px;
+      text-shadow: 0 2px 14px rgba(255, 255, 255, 0.8);
+      margin-bottom: 8px;
+      line-height: 0.95;
     }
 
     .subtitle {
-      font-size: 20px;
+      font-size: clamp(17px, 4.2vw, 22px);
       font-weight: 600;
       color: #db7093;
-      margin-bottom: 32px;
-      letter-spacing: 0.6px;
+      margin-bottom: clamp(24px, 6vw, 36px);
+      letter-spacing: 0.5px;
     }
 
     .message-box {
-      background: rgba(255, 255, 255, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.55);
       border-radius: 20px;
-      padding: 28px;
-      margin-bottom: 32px;
+      padding: clamp(20px, 5vw, 28px);
+      margin-bottom: clamp(24px, 6vw, 36px);
     }
 
     .message-box p {
-      font-size: 16.5px;
+      font-size: clamp(15px, 3.8vw, 17px);
       font-weight: 600;
-      color: #4b1d2a;
-      line-height: 1.75;
+      color: #3f1621;
+      line-height: 1.8;
     }
 
     .highlight {
@@ -113,39 +122,48 @@
 
     .signature {
       font-family: 'Dancing Script', cursive;
-      font-size: 32px;
+      font-size: clamp(28px, 7.5vw, 38px);
       color: #c71585;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      margin-top: 8px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: 12px 0 20px 0;
     }
 
     .bottom-emojis {
-      margin-top: 24px;
       display: flex;
       justify-content: center;
-      gap: 10px;
-      font-size: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: clamp(18px, 4.5vw, 24px);
     }
 
     .mini-heart {
-      color: rgba(255, 105, 180, 0.6);
-      animation: gentleBounce 2.4s ease-in-out infinite;
+      color: rgba(255, 105, 180, 0.7);
+      animation: gentleBounce 2.6s ease-in-out infinite;
     }
 
-    .mini-heart:nth-child(odd) { animation-delay: 0.3s; }
-    .mini-heart:nth-child(4) { font-size: 24px; }
+    .mini-heart:nth-child(odd)  { animation-delay: 0.4s; }
+    .mini-heart:nth-child(4)    { font-size: clamp(24px, 6vw, 32px); }
 
     @keyframes gentleBounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50%      { transform: translateY(-10px); }
     }
 
-    @media (max-width: 480px) {
-      .card { padding: 38px 28px; }
-      .title { font-size: 42px; }
-      .subtitle { font-size: 17px; }
-      .big-emoji { font-size: 60px; }
-      .signature { font-size: 28px; }
+    /* Extra small phones + safe area support */
+    @media (max-width: 380px) {
+      .card {
+        width: 96%;
+        padding: 24px 18px;
+      }
+      .message-box {
+        padding: 18px;
+      }
+    }
+
+    @supports (padding: env(safe-area-inset-bottom)) {
+      .card {
+        padding-bottom: calc(clamp(28px, 7vw, 44px) + env(safe-area-inset-bottom));
+      }
     }
   </style>
 </head>
@@ -187,15 +205,17 @@
 
   <script>
     const container = document.getElementById('hearts');
-    for (let i = 0; i < 18; i++) {
+    const emojis = ['💖','😏','😂','🔥','🤡','❤️','😈'];
+
+    for (let i = 0; i < 22; i++) {
       const heart = document.createElement('span');
       heart.className = 'floating-heart';
-      heart.textContent = ['💖','😏','😂','🔥','🤡'][Math.floor(Math.random()*5)];
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       heart.style.left = Math.random() * 100 + '%';
       heart.style.top = Math.random() * 100 + '%';
-      heart.style.fontSize = (16 + Math.random() * 24) + 'px';
-      heart.style.animationDelay = (Math.random() * 6) + 's';
-      heart.style.animationDuration = (4 + Math.random() * 5) + 's';
+      heart.style.fontSize = (14 + Math.random() * 28) + 'px';
+      heart.style.animationDelay = Math.random() * 8 + 's';
+      heart.style.animationDuration = (5 + Math.random() * 6) + 's';
       container.appendChild(heart);
     }
   </script>
