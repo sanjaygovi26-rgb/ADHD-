@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hey Big Bro... Listen Up 😏</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e9, #ffd1dc);
+      overflow: hidden;
+    }
+
+    .hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: rgba(255, 105, 180, 0.2);
+      animation: floatHeart 5s ease-in-out infinite;
+    }
+
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+      50% { transform: translateY(-40px) rotate(12deg); opacity: 0.85; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+      width: 92%;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      padding: 50px 38px;
+      text-align: center;
+      box-shadow:
+        0 10px 40px rgba(255, 105, 180, 0.15),
+        0 0 70px rgba(255, 182, 193, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      animation: fadeInUp 0.9s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .big-emoji {
+      font-size: 72px;
+      margin-bottom: 20px;
+      animation: shake 2.2s infinite ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(-6deg); }
+      40% { transform: rotate(6deg); }
+      60% { transform: rotate(-4deg); }
+      80% { transform: rotate(4deg); }
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 52px;
+      font-weight: 700;
+      color: #c71585;
+      text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: #db7093;
+      margin-bottom: 32px;
+      letter-spacing: 0.6px;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+
+    .message-box p {
+      font-size: 16.5px;
+      font-weight: 600;
+      color: #4b1d2a;
+      line-height: 1.75;
+    }
+
+    .highlight {
+      color: #ff1493;
+      font-weight: 700;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      color: #c71585;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-top: 8px;
+    }
+
+    .bottom-emojis {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 18px;
+    }
+
+    .mini-heart {
+      color: rgba(255, 105, 180, 0.6);
+      animation: gentleBounce 2.4s ease-in-out infinite;
+    }
+
+    .mini-heart:nth-child(odd) { animation-delay: 0.3s; }
+    .mini-heart:nth-child(4) { font-size: 24px; }
+
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 38px 28px; }
+      .title { font-size: 42px; }
+      .subtitle { font-size: 17px; }
+      .big-emoji { font-size: 60px; }
+      .signature { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts-bg" id="hearts"></div>
+
+  <div class="card">
+    <div class="big-emoji">😏😂</div>
+
+    <h1 class="title">Hey Big Brooo...</h1>
+    <p class="subtitle">Time for some sibling truth bombs 💥</p>
+
+    <div class="message-box">
+      <p>
+        You might be older...<br>but we both know I'm the <span class="highlight">real boss</span> now 😎<br><br>
+
+        Thanks for teaching me everything —<br>
+        especially how <span class="highlight">not</span> to dress, how <span class="highlight">not</span> to talk to girls,<br>
+        and how to lose at every game we ever played 🎮<br><br>
+
+        Still love you though... <br>
+        mostly because I have no choice 🤷‍♂️❤️
+      </p>
+    </div>
+
+    <p class="signature">Your Favorite Younger Sibling 😜</p>
+
+    <div class="bottom-emojis">
+      <span class="mini-heart">😏</span>
+      <span class="mini-heart">🔥</span>
+      <span class="mini-heart">😂</span>
+      <span class="mini-heart">❤️</span>
+      <span class="mini-heart">😈</span>
+      <span class="mini-heart">🤡</span>
+      <span class="mini-heart">💪</span>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('hearts');
+    for (let i = 0; i < 18; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'floating-heart';
+      heart.textContent = ['💖','😏','😂','🔥','🤡'][Math.floor(Math.random()*5)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.top = Math.random() * 100 + '%';
+      heart.style.fontSize = (16 + Math.random() * 24) + 'px';
+      heart.style.animationDelay = (Math.random() * 6) + 's';
+      heart.style.animationDuration = (4 + Math.random() * 5) + 's';
+      container.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
